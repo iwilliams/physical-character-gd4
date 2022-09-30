@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ipytbr41amtn"]
+
+[ext_resource type="Script" path="res://addons/physical_character/physical_character.gd" id="1_pe7hd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_v4p7p"]
+friction = 0.0
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bdqvv"]
+height = 1.0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qvjb2"]
+margin = 0.05
+height = 1.0
+radius = 0.52
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1tyb8"]
+margin = 0.001
+height = 1.0
+
+[node name="PhysicalCharacter" type="RigidBody3D"]
+mass = 10.0
+physics_material_override = SubResource("PhysicsMaterial_v4p7p")
+gravity_scale = 0.0
+continuous_cd = true
+can_sleep = false
+lock_rotation = true
+script = ExtResource("1_pe7hd")
+
+[node name="MeshInstance3d" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_bdqvv")
+
+[node name="CollisionShape3d" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_qvjb2")
+
+[node name="ShapeCast3d" type="ShapeCast3D" parent="."]
+shape = SubResource("CylinderShape3D_1tyb8")
