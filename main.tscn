@@ -102,34 +102,37 @@ mesh = SubResource("BoxMesh_dpkef")
 [node name="CollisionShape3d" type="CollisionShape3D" parent="MeshInstance3d4/StaticBody3d"]
 shape = SubResource("ConcavePolygonShape3D_4nudl")
 
-[node name="RigidBody3d" type="RigidBody3D" parent="."]
+[node name="Box" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21706, 0.64432, -1.53958)
+mass = 10.0
 
-[node name="MeshInstance3d5" type="MeshInstance3D" parent="RigidBody3d"]
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="Box"]
 mesh = SubResource("BoxMesh_dppi2")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3d" type="CollisionShape3D" parent="RigidBody3d"]
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Box"]
 shape = SubResource("ConvexPolygonShape3D_bwmf3")
 
-[node name="RigidBody3d2" type="RigidBody3D" parent="."]
+[node name="Box2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1022, 0.64432, -1.53958)
+mass = 10.0
 
-[node name="MeshInstance3d5" type="MeshInstance3D" parent="RigidBody3d2"]
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="Box2"]
 mesh = SubResource("BoxMesh_dppi2")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3d" type="CollisionShape3D" parent="RigidBody3d2"]
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Box2"]
 shape = SubResource("ConvexPolygonShape3D_bwmf3")
 
-[node name="RigidBody3d3" type="RigidBody3D" parent="."]
+[node name="Box3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67754, 1.69017, -1.53958)
+mass = 10.0
 
-[node name="MeshInstance3d5" type="MeshInstance3D" parent="RigidBody3d3"]
+[node name="MeshInstance3d5" type="MeshInstance3D" parent="Box3"]
 mesh = SubResource("BoxMesh_dppi2")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3d" type="CollisionShape3D" parent="RigidBody3d3"]
+[node name="CollisionShape3d" type="CollisionShape3D" parent="Box3"]
 shape = SubResource("ConvexPolygonShape3D_bwmf3")
 
 [node name="MeshInstance3d5" type="MeshInstance3D" parent="."]
